@@ -196,26 +196,26 @@ define([
                 _this.config.panelSizer = level;
                 if (_this.config.panelSizer == 'nonVisible') {
                     snapsrc.snap.world.leftReducer();
-                    $(dom).find(".snapy").empty()
+                    // $(dom).find(".snapy").empty()
 
                     renderer.renderSnap(_this.id, _this.dom, _this.config);
                 } else {
                     snapsrc.snap.world.leftExpand();
-                    $(dom).find(".snapy").empty()
+                    //$(dom).find(".snapy").empty()
                     renderer.renderSnap(_this.id, _this.dom, _this.config);
                 }
             });
 
             this.on('testLimiterChange', function(limiter) {
                 _this.config.testLimiter = limiter;
-                $(dom).find(".snapy").empty()
+                //$(dom).find(".snapy").empty()
                 renderer.renderSnap(_this.id, _this.dom, _this.config);
             });
 
             this.on('scriptImporterChange', function() {
                 // Importator function open file explorer to find xml project.
 
-                $(dom).find(".snapy").empty()
+                //$(dom).find(".snapy").empty()
                 renderer.renderSnap(_this.id, _this.dom, _this.config);
                 snapsrc.snap.world.importator(); //Lance le selecteur de fichier xml
             });
@@ -225,16 +225,16 @@ define([
             this.on('saveSnapStateChange', function() {
 
                 snapsrc.snap.world.stateSaver();
-                $(dom).find(".snapy").empty()
+                //$(dom).find(".snapy").empty()
                 renderer.renderSnap(_this.id, _this.dom, _this.config);
             })
 
 
-            /*  $(window).resize(function () {
-                 //Missing save state automatic to protect content
-                 $(dom).find(".snapy").empty()
-                 renderer.renderSnap(_this.id, _this.dom, _this.config);
-             }); */
+            $(window).resize(function() {
+                //Missing save state automatic to protect content
+                //$(dom).find(".snapy").empty()
+                renderer.renderSnap(_this.id, _this.dom, _this.config);
+            });
 
 
         },

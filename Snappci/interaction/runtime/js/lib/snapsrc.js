@@ -34319,7 +34319,7 @@ define([], function() {
                 blocks.push(watcherToggle('direction'));
                 blocks.push(block('direction', this.inheritsAttribute('direction')));
                 blocks.push('=');
-                blocks.push(this.makeBlockButton(cat));
+                //blocks.push(this.makeBlockButton(cat)); //wiquid another way to hide newblockbutton 
 
             } else if (cat === 'looks') {
 
@@ -42609,7 +42609,8 @@ define([], function() {
             this.controlBar.color = this.frameColor;
             this.controlBar.setHeight(this.logo.height()); // height is fixed
             this.controlBar.mouseClickLeft = function() {
-                this.world().fillPage();
+               console.log("error neutralized by janfix avoid resize")
+                //this.world().fillPage();
             };
             this.add(this.controlBar);
 
@@ -44096,7 +44097,7 @@ define([], function() {
         };
 
         // IDE_Morph settings persistance
-
+        //Flat Design Wiquid starts here
         IDE_Morph.prototype.applySavedSettings = function() {
             var design = this.getSetting('design'),
                 zoom = this.getSetting('zoom'),
@@ -46418,6 +46419,12 @@ define([], function() {
                 config.customSnapContext.trigger('rawDefinitionChange', [str]); //WIQUID MOD !!!!
             } catch (error) {
                 console.log("Error catched")
+                var buttonSave = document.querySelector('.saveSnapState');
+                if (buttonSave) {
+                buttonSave.click();
+                } else {
+                console.log('No button with class "saveSnapState" found.');
+                }
             }
             importString = str; // Needed for persistance in authoring
             config.snapScript = str; // needed because in local scope it keeps init value

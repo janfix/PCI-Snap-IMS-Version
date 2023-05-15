@@ -23,6 +23,7 @@ define(['taoQtiItem/portableLib/jquery_2_1_1',
 
     function renderSnap(id, $container, config) {
 
+        $container.find(".snapy").empty()
 
         function DefineTaoContext() {
             if ($container.parent().hasClass("widget-box")) {
