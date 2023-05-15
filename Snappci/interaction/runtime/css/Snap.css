@@ -3,6 +3,11 @@
     left: -20%;
  } */
  
+ .SnapInteraction .noclicks {
+     pointer-events: none;
+     opacity: 0.3;
+ }
+ 
  .SnapInteraction .compteur {
      display: none;
  }

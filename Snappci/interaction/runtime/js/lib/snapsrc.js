@@ -28493,8 +28493,9 @@ define([], function() {
             world.children[0].controlBar.updateLabel();
 
             if (compteurGo == 0) {
-                $container.find(".snapy").append("<div class='stop'></div");
+                
                 $container.find(".message").html("<div class='message'>Nombre d\'essais maximum atteint. Soumettez votre réponse pour continuer.</div>");
+                $container.find("canvas").addClass("noclicks");
 
 
                 //setTimeout(function () { $container.find(".world").hide(); }, 5000)
