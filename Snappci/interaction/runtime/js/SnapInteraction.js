@@ -124,7 +124,7 @@ define([
             var essai_rep = JSON.stringify(essai);
 
 
-            value = '{"XMLData":"' + XMLDataRep_cp + '","HTMLReport":"' + HTMLDataRep_cp + '","Snapshot":"' + snapshot + '", "Essais":"' + essai_rep + '"}';
+            value = '{"XMLData":"' + XMLDataRep_cp + '","HTMLReport":"' + HTMLDataRep_cp + '","Snapshot":"' + snapshot + '", "Essais":' + essai_rep + '}';
 
             return { base: { string: value } };
         },
